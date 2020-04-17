@@ -1,0 +1,45 @@
+<p>pipedemo works!</p>
+
+<div *ngFor= "let filter of sort">
+    <input 
+    type="radio" 
+    name="filters" 
+    id="radio-filter"
+    value="{{filter}}"
+    (change)="changeHandler($event)">
+    <label for="radio-filter">&nbsp;{{filter}}</label>
+</div>
+<p><span>Label Selected: {{selectedFilter}}</span></p>
+
+
+<label for="">Select No of rows:</label>
+<input type="number" min="1" [(ngModel)]="rows" [max]="employees.length">
+<br>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Salary as Number</th>
+            <th>Salary as currency</th>
+            <th>Age</th>
+            <th>City</th>
+            <th>Gender</th>
+            <th>DOB</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let e of employees|orderBy: selectedFilter|slice:0:rows">
+            <td>{{e.id}}</td>
+            <td>{{e.name|titlecase}}</td>
+            <td>{{e.salary|number:'5.4-5'}}</td>
+            <td>{{e.salary|currency:'USA'}}</td>
+            <td>{{e.age}}</td>
+            <td>{{e.city|lowercase}}</td>
+            <td>{{e.gender|gender}}</td>
+            <td>{{e.dob|date:'dd-MMM-yyyy'}}</td>
+        </tr>
+    </tbody>
+    
+</table>
