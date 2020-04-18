@@ -8,6 +8,8 @@ import { GenderPipe } from './pipe/gender.pipe';
 import { PipedemoComponent } from './pipedemo/pipedemo.component';
 import {FormsModule} from '@angular/forms';
 import { OrderByPipe } from './pipe/order-by.pipe';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeService } from './employee.service';
 
 
 @NgModule({
@@ -16,14 +18,15 @@ import { OrderByPipe } from './pipe/order-by.pipe';
     MyservicedemoComponent,
     GenderPipe,
     PipedemoComponent,
-    OrderByPipe
+    OrderByPipe,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [EmployeeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

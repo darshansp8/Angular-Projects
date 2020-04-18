@@ -1,0 +1,94 @@
+<div class="container">
+	<h1>Create Record</h1>
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>ID</th>
+				<td><input type="number" [(ngModel)]= "model.id"></td>
+			</tr>
+			<tr>
+				<th>NAME</th>
+				<td><input type="text" [(ngModel)]="model.name"></td>
+			</tr>
+			<tr>
+				<th>SALARY</th>
+				<td><input type="number" [(ngModel)]="model.age"></td>
+			</tr>
+			<tr>
+				<th>CITY</th>
+				<td><input type="text" [(ngModel)]="model.city"></td>
+			</tr>		
+			<tr>
+				<td><input 
+					type="button" 
+					value="Add User" 
+					(click)="addEmp()">
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+</div>
+
+<div class="container">
+	<h1>View Employee Data</h1>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>SALARY</th>
+				<th>CITY</th>
+				<th>EDIT</th>
+				<th>DELETE</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor = "let e of emp; let i=index">
+				<td>{{e.id}}</td>
+				<td>{{e.name}}</td>
+				<td>{{e.salary|number:'6.2-3'}}</td>
+				<td>{{e.city}}</td>
+				<td><input 
+					type="button" 
+					value="EDIT"
+					(click)="editEmpById(i)">
+				</td>
+				<td><input 
+					type="button" 
+					value="DELETE"
+					(click)="deleteEmpById(i)"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="container">
+	<h1>Create Record</h1>
+	<table class="table">
+		<tbody>
+			<tr>
+				<th>ID</th>
+				<td><input type="number" [(ngModel)]= "model2.id"></td>
+			</tr>
+			<tr>
+				<th>NAME</th>
+				<td><input type="text" [(ngModel)]="model2.name"></td>
+			</tr>
+			<tr>
+				<th>SALARY</th>
+				<td><input type="number" [(ngModel)]="model2.salary"></td>
+			</tr>
+			<tr>
+				<th>CITY</th>
+				<td><input type="text" [(ngModel)]="model2.name"></td>
+			</tr>		
+			<tr>
+				<td><input 
+					type="button" 
+					value="Upadte" 
+					(click)="updateEmp()">
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+</div>
