@@ -1,0 +1,92 @@
+<div class="container">
+	<h1>Create Record</h1>
+	<table class="table">
+		<tbody class="table-light">
+			<tr>
+				<td><input type="number" [(ngModel)]= "model.id" placeholder="ID"></td>
+			</tr>
+			<tr>
+				<td><input type="text" [(ngModel)]="model.name" placeholder="Name"></td>
+            </tr>
+            <tr>
+				<td><input type="text" [(ngModel)]="model.username" placeholder="Username"></td>
+			</tr>		
+			<tr>
+				<td><input type="email" [(ngModel)]="model.email" placeholder="Email"></td>
+			</tr>
+			
+			<tr>
+				<td><input 
+					type="button" 
+					value="Add User" 
+					(click)="addEmp()"
+					class="btn btn-primary">
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+</div>
+
+<div class="container">
+	<h1>View Employee Data</h1>
+	<table class="table table-striped">
+		<thead class="table-dark">
+			<tr>
+				<th>ID</th>
+				<th>NAME</th>
+				<th>USERNAME</th>
+				<th>EMAIL</th>
+				<th>EDIT</th>
+				<th>DELETE</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor = "let e of users; let i=index">
+				<td>{{e.id}}</td>
+				<td>{{e.name}}</td>
+				<td>{{e.username}}</td>
+				<td>{{e.email}}</td>
+				<td><input 
+					type="button" 
+					value="EDIT"
+					(click)="editEmpById(i)"
+					class="btn btn-primary">
+				</td>
+				<td><input 
+					type="button" 
+					value="DELETE"
+					(click)="deleteEmpById(i)"
+					class="btn btn-danger">
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="container">
+	<h1>Update Record</h1>
+	<table class="table">
+		<tbody class="table-light">
+			<tr>
+				<td><input type="number" [(ngModel)]= "model2.id" placeholder="Id"></td>
+			</tr>
+			<tr>
+				<td><input type="text" [(ngModel)]="model2.name" placeholder="Name"></td>
+			</tr>
+			<tr>
+				<td><input type="username" [(ngModel)]="model2.username" placeholder="Username"></td>
+			</tr>
+			<tr>
+				<td><input type="email" [(ngModel)]="model2.email" placeholder="Email"></td>
+			</tr>		
+			<tr>
+				<td><input 
+					type="button" 
+					value="Upadte" 
+					(click)="updateEmp()"
+					class="btn btn-primary">
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+</div>

@@ -10,7 +10,8 @@ import {FormsModule} from '@angular/forms';
 import { OrderByPipe } from './pipe/order-by.pipe';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeService } from './employee.service';
-
+import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './HttpCrud/users/users.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,14 @@ import { EmployeeService } from './employee.service';
     GenderPipe,
     PipedemoComponent,
     OrderByPipe,
-    EmployeeComponent
+    EmployeeComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
