@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Users } from './interfaces/users';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +7,8 @@ import { Observable } from 'rxjs';
 export class EmployeeService {
 
   public usersUrl: string = "https://jsonplaceholder.typicode.com/users";
+  public postsUrl: string = "https://jsonplaceholder.typicode.com/posts";
+  public albumsUrl: string = "https://jsonplaceholder.typicode.com/albums"; 
   constructor(private http: HttpClient) { }
 
   getEmployeesService(){
@@ -21,7 +21,16 @@ export class EmployeeService {
     // return this.employees;
   }
 
-  getUsersApi(): Observable<Users>{
-    return this.http.get<Users>(this.usersUrl);
+  getUsersApi(){
+    return this.http.get(this.usersUrl);
   }
+
+  getPostsApi(){
+    return this.http.get(this.postsUrl);
+  }
+
+  getAlbumsApi(){
+    return this.http.get(this.albumsUrl);
+  }
+
 }

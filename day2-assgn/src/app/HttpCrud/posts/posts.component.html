@@ -1,0 +1,100 @@
+<div class="container">
+    <h1>Create Record</h1>
+	<table class="table">
+		<tbody class="table-light">
+			<tr>
+				<td><input type="number" [(ngModel)]= "model.id" placeholder="Id"></td>
+			</tr>
+			<tr>
+				<td><input type="number" [(ngModel)]="model.userId" placeholder="User Id"></td>
+            </tr>
+            <tr>
+				<td><input type="text" [(ngModel)]="model.title" placeholder="Title"></td>
+			</tr>		
+			<tr>
+				<td><input type="textarea" [(ngModel)]="model.body" placeholder="Body"></td>
+			</tr>
+			
+			<tr>
+				<td><input 
+					type="button" 
+					value="Add Post" 
+					(click)="addPost()"
+					class="btn btn-primary">
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+</div>
+
+<div class="container">
+    <table class="table">
+        <tbody class="table-light">
+            <tr>Select Rows <input type="number" [(ngModel)] = "rows"></tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div *ngFor = "let post of posts|slice:0:rows; let i=index" class="card col-sm-4">
+            <div class="card-body">
+                <table class="table">
+                    <tbody class="table-light">
+                        <tr>
+                            <td>UserId: {{post.userId}}</td>
+                            <td>Id: {{post.id}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>{{post.title}}</h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                {{post.body}}
+                            </td>
+                        </tr>
+                        <tr><td><input 
+                            type="button" 
+                            value="EDIT"
+                            (click)="editPostById(i)"
+                            class="btn btn-primary">
+                        </td>
+                        <td><input 
+                            type="button" 
+                            value="DELETE"
+                            (click)="deletePostById(i)"
+                            class="btn btn-danger">
+                        </td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+	<h1>Update Record</h1>
+	<table class="table">
+		<tbody class="table-light">
+			<tr>
+				<td><input type="number" [(ngModel)]= "model2.id" placeholder="Id"></td>
+			</tr>
+			<tr>
+				<td><input type="number" [(ngModel)]="model2.userId" placeholder="User Id"></td>
+			</tr>
+			<tr>
+				<td><input type="text" [(ngModel)]="model2.title" placeholder="Title"></td>
+			</tr>
+			<tr>
+				<td><input type="body" [(ngModel)]="model2.body" placeholder="Body"></td>
+			</tr>		
+			<tr>
+				<td><input 
+					type="button" 
+					value="Upadte" 
+					(click)="updatePost()"
+					class="btn btn-primary">
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+</div>

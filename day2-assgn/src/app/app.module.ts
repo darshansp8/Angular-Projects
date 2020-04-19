@@ -12,6 +12,8 @@ import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeService } from './employee.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './HttpCrud/users/users.component';
+import { PostsComponent } from './HttpCrud/posts/posts.component';
+import { AlbumsComponent } from './HttpCrud/albums/albums.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { UsersComponent } from './HttpCrud/users/users.component';
     PipedemoComponent,
     OrderByPipe,
     EmployeeComponent,
-    UsersComponent
+    UsersComponent,
+    PostsComponent,
+    AlbumsComponent
   ],
   imports: [
     BrowserModule,

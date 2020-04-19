@@ -1,0 +1,90 @@
+<div class="container">
+    <h1>Create Record</h1>
+
+	<table class="table">
+		<tbody class="table-light">
+			<tr>
+				<td><input type="number" [(ngModel)]= "model.id" placeholder="Id"></td>
+			</tr>
+			<tr>
+				<td><input type="number" [(ngModel)]="model.userId" placeholder="User Id"></td>
+            </tr>
+            <tr>
+				<td><input type="text" [(ngModel)]="model.title" placeholder="Title"></td>
+			</tr>		
+			<tr>
+				<td><input 
+					type="button" 
+					value="Add Post" 
+					(click)="addAlbums()"
+					class="btn btn-primary">
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+</div>
+
+<div class="container">
+    <table class="table">
+        <tbody class="table-light">
+            <tr>Select Rows <input type="number" [(ngModel)] = "rows"></tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div *ngFor = "let album of albums|slice:0:rows; let i=index" class="card col-sm-4">
+            <div class="card-body">
+                <table class="table">
+                    <tbody class="table-light">
+                        <tr>
+                            <td>UserId: {{album.userId}}</td>
+                            <td>Id: {{album.id}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>{{album.title}}</h5>
+                            </td>
+                        </tr>
+                        <tr><td><input 
+                            type="button" 
+                            value="EDIT"
+                            (click)="editAlbumsById(i)"
+                            class="btn btn-primary">
+                        </td>
+                        <td><input 
+                            type="button" 
+                            value="DELETE"
+                            (click)="deleteAlbumsById(i)"
+                            class="btn btn-danger">
+                        </td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+	<h1>Update Record</h1>
+	<table class="table">
+		<tbody class="table-light">
+			<tr>
+				<td><input type="number" [(ngModel)]= "model2.id" placeholder="Id"></td>
+			</tr>
+			<tr>
+				<td><input type="number" [(ngModel)]="model2.userId" placeholder="User Id"></td>
+			</tr>
+			<tr>
+				<td><input type="text" [(ngModel)]="model2.title" placeholder="Title"></td>
+			</tr>		
+			<tr>
+				<td><input 
+					type="button" 
+					value="Upadte" 
+					(click)="updateAlbums()"
+					class="btn btn-primary">
+				</td>
+			</tr>	
+		</tbody>
+	</table>
+</div>
+

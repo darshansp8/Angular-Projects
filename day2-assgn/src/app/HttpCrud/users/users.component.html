@@ -28,6 +28,11 @@
 </div>
 
 <div class="container">
+	<table class="table">
+        <tbody class="table-light">
+            <tr>Select Rows <input type="number" [(ngModel)] = "rows"></tr>
+        </tbody>
+    </table>
 	<h1>View Employee Data</h1>
 	<table class="table table-striped">
 		<thead class="table-dark">
@@ -41,7 +46,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor = "let e of users; let i=index">
+			<tr *ngFor = "let e of users|slice:0:rows; let i=index">
 				<td>{{e.id}}</td>
 				<td>{{e.name}}</td>
 				<td>{{e.username}}</td>

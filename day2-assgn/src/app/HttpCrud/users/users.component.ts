@@ -9,6 +9,7 @@ import { EmployeeService } from 'src/app/employee.service';
 })
 export class UsersComponent implements OnInit {
 
+  rows = 5;
   public users = [];
   model:any =[];
   model2:any=[];
