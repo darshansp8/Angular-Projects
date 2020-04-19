@@ -9,6 +9,8 @@ export class EmployeeService {
   public usersUrl: string = "https://jsonplaceholder.typicode.com/users";
   public postsUrl: string = "https://jsonplaceholder.typicode.com/posts";
   public albumsUrl: string = "https://jsonplaceholder.typicode.com/albums"; 
+  public photosUrl: string = "https://jsonplaceholder.typicode.com/photos";
+
   constructor(private http: HttpClient) { }
 
   getEmployeesService(){
@@ -31,6 +33,10 @@ export class EmployeeService {
 
   getAlbumsApi(){
     return this.http.get(this.albumsUrl);
+  }
+
+  getPhotosApi(){
+    return this.http.get(this.photosUrl);
   }
 
 }

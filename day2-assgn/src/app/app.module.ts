@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './HttpCrud/users/users.component';
 import { PostsComponent } from './HttpCrud/posts/posts.component';
 import { AlbumsComponent } from './HttpCrud/albums/albums.component';
+import { PhotosComponent } from './HttpCrud/photos/photos.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AlbumsComponent } from './HttpCrud/albums/albums.component';
     EmployeeComponent,
     UsersComponent,
     PostsComponent,
-    AlbumsComponent
+    AlbumsComponent,
+    PhotosComponent
   ],
   imports: [
     BrowserModule,
