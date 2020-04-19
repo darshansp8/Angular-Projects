@@ -1,28 +1,25 @@
 <div class="container">
 	<h1>Create Record</h1>
 	<table class="table">
-		<tbody>
+		<tbody class="table-light">
 			<tr>
-				<th>ID</th>
-				<td><input type="number" [(ngModel)]= "model.id"></td>
+				<td><input type="number" [(ngModel)]= "model.id" placeholder="ID"></td>
 			</tr>
 			<tr>
-				<th>NAME</th>
-				<td><input type="text" [(ngModel)]="model.name"></td>
+				<td><input type="text" [(ngModel)]="model.name" placeholder="Name"></td>
 			</tr>
 			<tr>
-				<th>SALARY</th>
-				<td><input type="number" [(ngModel)]="model.age"></td>
+				<td><input type="number" [(ngModel)]="model.age" placeholder="Salary"></td>
 			</tr>
 			<tr>
-				<th>CITY</th>
-				<td><input type="text" [(ngModel)]="model.city"></td>
+				<td><input type="text" [(ngModel)]="model.city" placeholder="City"></td>
 			</tr>		
 			<tr>
 				<td><input 
 					type="button" 
 					value="Add User" 
-					(click)="addEmp()">
+					(click)="addEmp()"
+					class="btn btn-primary">
 				</td>
 			</tr>	
 		</tbody>
@@ -31,8 +28,8 @@
 
 <div class="container">
 	<h1>View Employee Data</h1>
-	<table class="table">
-		<thead>
+	<table class="table table-striped">
+		<thead class="table-dark">
 			<tr>
 				<th>ID</th>
 				<th>NAME</th>
@@ -51,42 +48,42 @@
 				<td><input 
 					type="button" 
 					value="EDIT"
-					(click)="editEmpById(i)">
+					(click)="editEmpById(i)"
+					class="btn btn-primary">
 				</td>
 				<td><input 
 					type="button" 
 					value="DELETE"
-					(click)="deleteEmpById(i)"></td>
+					(click)="deleteEmpById(i)"
+					class="btn btn-danger">
+				</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 
 <div class="container">
-	<h1>Create Record</h1>
+	<h1>Update Record</h1>
 	<table class="table">
-		<tbody>
+		<tbody class="table-light">
 			<tr>
-				<th>ID</th>
-				<td><input type="number" [(ngModel)]= "model2.id"></td>
+				<td><input type="number" [(ngModel)]= "model2.id" placeholder="Id"></td>
 			</tr>
 			<tr>
-				<th>NAME</th>
-				<td><input type="text" [(ngModel)]="model2.name"></td>
+				<td><input type="text" [(ngModel)]="model2.name" placeholder="Name"></td>
 			</tr>
 			<tr>
-				<th>SALARY</th>
-				<td><input type="number" [(ngModel)]="model2.salary"></td>
+				<td><input type="number" [(ngModel)]="model2.salary" placeholder="Salary"></td>
 			</tr>
 			<tr>
-				<th>CITY</th>
-				<td><input type="text" [(ngModel)]="model2.name"></td>
+				<td><input type="text" [(ngModel)]="model2.name" placeholder="City"></td>
 			</tr>		
 			<tr>
 				<td><input 
 					type="button" 
 					value="Upadte" 
-					(click)="updateEmp()">
+					(click)="updateEmp()"
+					class="btn btn-primary">
 				</td>
 			</tr>	
 		</tbody>
