@@ -1,0 +1,26 @@
+<div class="container">
+    <table class="table">
+        <tbody class="table-light">
+            <tr>Select Rows <input type="number" [(ngModel)] = "rows"></tr>
+        </tbody>
+    </table>
+    <div class="row">
+        <div *ngFor = "let test of test|slice:0:rows; let i=index" class="card col-sm-4">
+            <div class="card-body">
+                <table class="table">
+                    <tbody class="table-light">
+                        <tr>
+                            <td>UserId: {{test.trainer_id}}</td>
+                            <td>Id: {{test.trainer_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>{{test.technology_id}}</h5>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
