@@ -19,7 +19,15 @@ export class TestComponent implements OnInit {
     this.testService.getTrainersApi()
     .subscribe(data =>{
       this.test = Array.from(Object.keys(data), k =>data[k]);
-      console.log(this.test);
+      // console.log(this.test);
+    });
+
+  }
+
+  deleteTestById(id){
+    this.testService.deleteTrainersApi(id)
+    .subscribe(data => {
+      this.test = Array.from(Object.keys(data), k => data[k]);
     });
   }
 

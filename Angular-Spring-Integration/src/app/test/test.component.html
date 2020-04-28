@@ -18,6 +18,14 @@
                                 <h5>{{test.technology_id}}</h5>
                             </td>
                         </tr>
+                        <tr>
+                            <td><input 
+                                type="button" 
+                                value="DELETE"
+                                (click)="deleteTestById(test.trainer_id)"
+                                class="btn btn-danger">
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
